@@ -39,7 +39,7 @@ You can also run from the command line as follows:
 Motivation and Goals
 ====================
 
-The core functionality of the calc app itself is not that interesting. My primary goal in this project is to server as a platform for learning more about the Clojure projects - development cycle, test frameworks, etc. - without getting too caught up in the actual application. 
+The core functionality of the calc app itself is not that interesting. My primary goal in this project is to server as a platform for learning more about the Clojure projects - development cycle, test frameworks, trying new tools, etc. - without getting too bogged down in the details of the actual application. 
 
 Acknowledgements
 ================
