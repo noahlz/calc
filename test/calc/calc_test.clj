@@ -1,6 +1,6 @@
-(ns sandbox.calc-test
+(ns calc.calc-test
   (:use [clojure.test]
-        [sandbox.calc]))
+        [calc.calc]))
 
 (deftest tests 
   ;; TODO: could probably use test.generative!
