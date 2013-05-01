@@ -44,7 +44,7 @@ The core functionality of the calc app itself is not that interesting. My primar
 Acknowledgements
 ================
 
-I used Eric Robert's _Programming Abstractions in C_ (Addison Wesley, 1997) as a reference in coding my original implementation. Chapter 14 "Expression Trees" describes an almost identical problem.
+I used Eric Robert's _Programming Abstractions in C_ (Addison Wesley, 1997) as a reference in coding my implementation. Chapter 14 "Expression Trees" describes an almost identical problem.
 
 License
 =======
