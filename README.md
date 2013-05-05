@@ -41,8 +41,16 @@ Motivation and Goals
 
 The core functionality of the calc app itself is not that interesting. The primary goal of this project is to provide a platform for learning the Clojure development cycle, test frameworks, trying new tools, etc. - without getting too bogged down in the details of the actual application. 
 
+If you are looking for an infix library to use in your Clojure application, here are two:
+
+- [Unfix](https://github.com/joyofclojure/unfix)
+- [Incanter](http://data-sorcery.org/2010/05/14/infix-math/)
+
 Acknowledgements
 ================
+
+I started this project to answer the following StackOverflow problem:
+[How to write the shortest and most idiomatic CLI calculator in Clojure](http://stackoverflow.com/q/16105847/7507)
 
 I used Eric Robert's _Programming Abstractions in C_ (Addison Wesley, 1997) as a reference in coding my implementation. Chapter 14 "Expression Trees" describes an almost identical problem.
 
