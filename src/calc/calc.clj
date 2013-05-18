@@ -1,4 +1,5 @@
-(ns calc.calc)
+(ns calc.calc
+  (:require [clojure.string :refer [split]]))
 
 (def instructions
   (str "Please enter an arithmetic expression separated by spaces.\n"
@@ -14,6 +15,7 @@
                                  '/ 1
                                  '+ 0
                                  '- 0})
+
 (def ^{:private true} operator? (set (keys operators)))
 
 (defn- higher-precedence? [leftop rightop]
@@ -70,4 +72,38 @@
         (error)))
   (catch java.lang.RuntimeException ex
     (error (.getMessage ex)))))
-    
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Reverse Polish Notation implementation 
+;; http://en.wikipedia.org/wiki/Reverse_Polish_notation#Example
+
+(def ^{:private true}
+  operator-strs (set (map str (keys operators))))
+
+(defn parse [s]
+  (if (operator-strs s) 
+    (symbol s)
+    (Integer/parseInt s)))
+
+(defn calc-rpn
+  "calc using reverse polish notation" 
+  [input]
+  (try
+    (loop [params (map parse (split input #"\s+"))
+           numbers []]
+      (if-let [p (first params)]
+        (if (operator? p)
+          (if (< (count numbers) 2)
+            (error "invalid input")
+            (recur (rest params) 
+                   (conj (nthrest numbers 2)
+                         ((resolve p) (first numbers) (second numbers)))))
+          (recur (rest params)
+                 (conj numbers p)))
+        (if (= (count numbers) 1) 
+          (first numbers)
+          (error (str "left over numbers" numbers))))) 
+  (catch NumberFormatException ex
+    (error (str "invalid input: " (.getMessage ex))))))
+
