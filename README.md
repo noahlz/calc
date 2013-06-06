@@ -54,6 +54,12 @@ I started this project to answer the following StackOverflow problem:
 
 I used Eric Robert's _Programming Abstractions in C_ (Addison Wesley, 1997) as a reference in coding my implementation. Chapter 14 "Expression Trees" describes an almost identical problem.
 
+# Continuous Integration
+
+[![Build Status](https://travis-ci.org/noahlz/calc.png?branch=master)](http://travis-ci.org/noahlz/calc)
+
+CI is hosted by [travis-ci.org](http://travis-ci.org)
+
 License
 =======
 
